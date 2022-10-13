@@ -22,6 +22,8 @@ export class Province {
   get price() { return this._price; }
   set price(arg) { this._price = parseInt(arg); }
   get profit() {
+    // 破壞原本的程式碼確定有出現錯誤
+    // return this.demandValue - this.demandCost * 2;
     return this.demandValue - this.demandCost;
   }
   get demandCost() {
