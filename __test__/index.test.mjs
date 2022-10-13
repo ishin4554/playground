@@ -69,3 +69,19 @@ describe('no producers', function () {
     expect(noProducers.profit).equal(0)
   })
 });
+
+// 作者認為若是在重構前遇到這類型的測試，可能會選擇捨棄，因為這不屬於可見行為，或透過 introduce assertion (349) 處理
+// ref: https://refactoring.com/catalog/introduceAssertion.html
+describe('string for producers', function() {
+  it('', function() {
+    const data = {
+      name: "String Producer",
+      producers: "",
+      demand: 30,
+      price: 20
+    }
+    const prov = new Province(data);
+    // 會出現 Failure (失敗)，有些測試框架會區分：error, regular failure
+    expect(prov.shortfall).equal(0);
+  })
+})
