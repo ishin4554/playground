@@ -42,7 +42,12 @@ describe('province', function () {
     expect(asia.profit).equal(-10);
   })
 
-  // TODO: 但對於商業邏輯來說，profit < 0 合理嗎？若不合理，應怎麼避免負數出現
+  // 預期應該要回傳 NaN
+  it('empty string demand', function() {
+    asia.demand = '';
+    expect(asia.shortfall).NaN;
+    expect(asia.profit).NaN;
+  })
 });
 
 // 邊緣案例：沒有空陣列
