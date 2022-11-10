@@ -1,13 +1,21 @@
 // 2. encapsulate record 封裝紀錄為類別，並透過 getter, setter 控制被使用的方式
 class Organization {
+  // 將 data 欄位與物件融合，避免直接修改到 ref 或使用 deepClone 來複製
   constructor(data) {
-    this._data = data;
+    this._name = data.name;
+    this._country = data.country;
   }
   set name(aString) {
-    this._data.name = aString;
+    this._name = aString;
   }
   get name() {
-    return this._data.name
+    return this._name
+  }
+  set country(aCountryCode) {
+    this._country = aCountryCode;
+  }
+  get country() {
+    return this._country
   }
 }
 
@@ -16,17 +24,8 @@ const organization = new Organization({
   country: "GB"
 })
 
+// 3. 移除 encapsulate variable
 const getOrganization = () => organization;
-
-// 1. encapsulate variable
-// 命名先很醜也容易搜尋，因為是過度步驟
-export const getRawDataOfOrganization = () => {
-  return organization._data
-}
-
-const setRawDataOfOrganization = (newName) => {
-  getOrganization().name = newName
-}
 
 export const render = () => {
   let result = ''
