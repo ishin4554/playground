@@ -1,4 +1,4 @@
-import {render} from "../index";
+import {render} from "../ex1";
 
 describe('encapsulate record', function () {
   test('should be html', function () {
