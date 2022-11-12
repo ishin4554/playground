@@ -39,7 +39,12 @@ const getRawDataOfCustomers = () => customerData._data;
 const setRawDataOfCustomers = (arg) => { customerData = new CustomerData(arg); }
 
 setRawDataOfCustomers(customerData);
-getRawDataOfCustomers()[customerID].usages[year][month] = amount;
+
+const setUsage = (customerID, year, month, amount) => {
+  getRawDataOfCustomers()[customerID].usages[year][month] = amount;
+}
+
+setUsage(customerID, year, month, amount);
 
 export const compareUsage = (customerID, laterYear, month) => {
   const later = getRawDataOfCustomers()[customerID].usages[laterYear][month];
