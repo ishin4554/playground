@@ -27,10 +27,13 @@ const {
   amount
 } = updateData;
 
-customerData[customerID].usages[year][month] = amount;
+const getRawDataOfCustomers = () => customerData;
+const setRawDataOfCustomers = (arg) => { customerData = arg; }
+
+getRawDataOfCustomers()[customerID].usages[year][month] = amount;
 
 export const compareUsage = (customerID, laterYear, month) => {
-  const later = customerData[customerID].usages[laterYear][month];
-  const earlier = customerData[customerID].usages[laterYear - 1][month];
+  const later = getRawDataOfCustomers()[customerID].usages[laterYear][month];
+  const earlier = getRawDataOfCustomers()[customerID].usages[laterYear - 1][month];
   return { laterAmount: later, change: later - earlier}
 }
