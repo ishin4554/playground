@@ -25,6 +25,9 @@ class CustomerData {
   constructor(data) {
     this._data = data;
   }
+  setUsage(customerID, year, month, amount) {
+    this._data[customerID].usages[year][month] = amount;
+  }
 }
 
 const {
@@ -40,11 +43,7 @@ const setRawDataOfCustomers = (arg) => { customerData = new CustomerData(arg); }
 
 setRawDataOfCustomers(customerData);
 
-const setUsage = (customerID, year, month, amount) => {
-  getRawDataOfCustomers()[customerID].usages[year][month] = amount;
-}
-
-setUsage(customerID, year, month, amount);
+getCustomerData().setUsage(customerID, year, month, amount);
 
 export const compareUsage = (customerID, laterYear, month) => {
   const later = getRawDataOfCustomers()[customerID].usages[laterYear][month];
