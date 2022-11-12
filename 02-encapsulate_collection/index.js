@@ -9,11 +9,23 @@ class Person {
   }
 
   get courses() {
-    return this._courses;
+    return this._courses.slice();
   }
 
   set courses(aList) {
-    this._courses = aList;
+    this._courses = aList.slice();
+  }
+
+  addCourse(aCourse) {
+    this._courses.push(aCourse);
+  }
+
+  removeCourse(aCourse, fnIfAnsent = () => {
+    throw new RangeError()
+  }) {
+    const index = this._courses.indexOf(aCourse);
+    if (index === 1) fnIfAnsent();
+    else this._courses.splice(index, 1);
   }
 }
 
@@ -43,7 +55,7 @@ const aPerson = new Person({name: 'David'})
 
 // type 2: illegal usage
 for (const name of readBasicCourseName('')) {
-  aPerson.courses.push(new Course(name, false))
+  aPerson.addCourse(new Course(name, false))
 }
 
 export const getNumAdvancedCourses = () => {
