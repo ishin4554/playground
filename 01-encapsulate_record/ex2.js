@@ -20,6 +20,13 @@ const updateData = {
   month: 1,
   amount: 20,
 };
+
+class CustomerData {
+  constructor(data) {
+    this._data = data;
+  }
+}
+
 const {
   customerID,
   year,
@@ -27,9 +34,11 @@ const {
   amount
 } = updateData;
 
-const getRawDataOfCustomers = () => customerData;
-const setRawDataOfCustomers = (arg) => { customerData = arg; }
+const getCustomerData = () => customerData;
+const getRawDataOfCustomers = () => customerData._data;
+const setRawDataOfCustomers = (arg) => { customerData = new CustomerData(arg); }
 
+setRawDataOfCustomers(customerData);
 getRawDataOfCustomers()[customerID].usages[year][month] = amount;
 
 export const compareUsage = (customerID, laterYear, month) => {
