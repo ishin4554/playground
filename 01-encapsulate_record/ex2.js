@@ -32,6 +32,9 @@ class CustomerData {
   get rawData() {
     return _.cloneDeep(this._data);
   }
+  usage(customerID, year, month) {
+    return this._data[customerID].usages[year][month];
+  }
 }
 
 const {
@@ -50,7 +53,12 @@ setRawDataOfCustomers(customerData);
 getCustomerData().setUsage(customerID, year, month, amount);
 
 export const compareUsage = (customerID, laterYear, month) => {
-  const later = getRawDataOfCustomers()[customerID].usages[laterYear][month];
-  const earlier = getRawDataOfCustomers()[customerID].usages[laterYear - 1][month];
+  // type 1 : clear API
+  const later = getCustomerData().usage(customerID, laterYear, month);
+  const earlier = getCustomerData().usage(customerID, laterYear - 1, month);
+
+  // type2 : more flexibility usage with raw data structure
+  // const later = getCustomerData().rawData[customerID].usages[laterYear][month];
+  // const earlier = getCustomerData().rawData[customerID].usages[laterYear - 1][month];
   return { laterAmount: later, change: later - earlier}
 }
