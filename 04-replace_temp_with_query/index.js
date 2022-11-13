@@ -5,10 +5,9 @@ export class Order {
   }
 
   get price() {
-    let basePrice = this._quantity * this._item.price;
-    // 初始 98 折
+    // 將 let 改為 const 確認有沒有過程中的賦值
+    const basePrice = this._quantity * this._item.price;
     let discountFactor = 0.98;
-    // 滿千再多打 0.3 折
     if (basePrice > 1000) discountFactor -= 0.03;
     return basePrice * discountFactor;
   }
