@@ -5,10 +5,12 @@ export class Order {
   }
 
   get price() {
-    // 將 let 改為 const 確認有沒有過程中的賦值
-    const basePrice = this._quantity * this._item.price;
     let discountFactor = 0.98;
-    if (basePrice > 1000) discountFactor -= 0.03;
-    return basePrice * discountFactor;
+    if (this.basePrice > 1000) discountFactor -= 0.03;
+    return this.basePrice * discountFactor;
+  }
+
+  get basePrice() {
+    return this._quantity * this._item.price;
   }
 }
