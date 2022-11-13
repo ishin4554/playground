@@ -6,6 +6,6 @@ describe('remove middle man', function () {
     const department = new Department();
     department.manager = 'Lucy';
     person.department = department;
-    expect(person.manager).toBe('Lucy');
+    expect(person.department.manager).toBe('Lucy');
   });
 });

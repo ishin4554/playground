@@ -14,10 +14,6 @@ export class Person {
   set department(arg) {
     this._department = arg;
   }
-
-  get manager() {
-    return this._department.manager;
-  }
 }
 
 export class Department {
