@@ -1,3 +1,6 @@
+// Telephone Number 不會只供 Person 使用，
+// 所以可以將 telephone number 先 change reference to value
+// 來新增 office 存取 telephone number 的函式
 class TelephoneNumber {
   get areaCode() {
     return this._areaCode;
@@ -15,7 +18,7 @@ class TelephoneNumber {
     this._number = arg;
   }
 
-  get telephoneNumber() {
+  toString() {
     return `(${this.areaCode}) ${this.number}`
   }
 }
@@ -35,7 +38,7 @@ export class Person {
   }
 
   get telephoneNumber() {
-    return this._telephoneNumber.telephoneNumber;
+    return this._telephoneNumber.toString();
   }
 
   get officeAreaCode() {
