@@ -6,6 +6,6 @@ describe('hide delegate', function () {
     const department = new Department();
     department.manager = 'Lucy';
     person.department = department;
-    expect(person.department.manager).toBe('Lucy');
+    expect(person.manager).toBe('Lucy');
   });
 });

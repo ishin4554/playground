@@ -14,21 +14,26 @@ export class Person {
   set department(arg) {
     this._department = arg;
   }
+
+  get manager() {
+    return this._department.manager;
+  }
 }
+
 export class Department {
   get chargeCode() {
-      return this._chargeCode;
+    return this._chargeCode;
   }
 
   set chargeCode(arg) {
-      this._chargeCode = arg;
+    this._chargeCode = arg;
   }
 
   get manager() {
-      return this._manager;
+    return this._manager;
   }
 
   set manager(arg) {
-      this._manager = arg;
+    this._manager = arg;
   }
 }
