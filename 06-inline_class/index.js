@@ -15,14 +15,11 @@ export class TrackingInformation {
     this._trackingNumber = arg;
   }
 
-  get display() {
-    return `${this.shippingCompany}: ${this.trackingNumber}`
-  }
 }
 
 export class Shipment {
   get trackingInfo() {
-    return this._trackingInformation.display;
+    return `${this.shippingCompany}: ${this.trackingNumber}`
   }
 
   get trackingInformation() {
