@@ -5,9 +5,9 @@ export class Order {
   }
 
   get price() {
-    const discountFactor = this.discountFactor;
-    return this.basePrice * discountFactor;
+    return this.basePrice * this.discountFactor;
   }
+
   // extract function
   get discountFactor() {
     let discountFactor = 0.98;
