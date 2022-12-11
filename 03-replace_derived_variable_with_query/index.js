@@ -5,9 +5,7 @@ class ProductionPlan {
   }
 
   get production() {
-    // 加入斷言，如果斷言沒有失敗，才能把回傳欄位換成回傳計算結果
-    console.assert(this._production === this.calculatedProduction)
-    return this._production
+    return this.calculatedProduction
   }
 
   get calculatedProduction() {
