@@ -1,7 +1,7 @@
 class Organization {
   constructor(data) {
-    // 如果要讓資料開始支援 title 這個欄位
-    this._title = (data.title !== undefined) ? data.title : data.name;
+    // 確認所有使用 name 的地方都改為 title 之後，就可以移除檢查
+    this._title = data.title;
     this._country = data.country;
   }
 
@@ -22,5 +22,5 @@ class Organization {
   }
 }
 
-const organization = new Organization({name: "Acme Gooseberries", country: "GB"})
+const organization = new Organization({title: "Acme Gooseberries", country: "GB"})
 export default organization;
