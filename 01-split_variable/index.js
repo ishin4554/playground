@@ -8,8 +8,8 @@ const distanceTraveled = (scenario, time) => {
   if (secondaryTime > 0) {
     let primaryVelocity = primaryAcceleration * scenario.delay;
     // 在下一次賦值時宣告變數
-    let acc = (scenario.primaryForce + scenario.secondaryForce) / scenario.mass;
-    result += primaryVelocity * secondaryTime + 0.5 * acc * secondaryTime * secondaryTime;
+    const secondaryAcceleration = (scenario.primaryForce + scenario.secondaryForce) / scenario.mass;
+    result += primaryVelocity * secondaryTime + 0.5 * secondaryAcceleration * secondaryTime * secondaryTime;
   }
   return result;
 }
