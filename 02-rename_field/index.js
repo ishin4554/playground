@@ -1,7 +1,7 @@
 class Organization {
   constructor(data) {
     // 如果要讓資料開始支援 title 這個欄位
-    this._title = data.name;
+    this._title = (data.title !== undefined) ? data.title : data.name;
     this._country = data.country;
   }
 
