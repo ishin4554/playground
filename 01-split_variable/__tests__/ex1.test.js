@@ -1,6 +1,6 @@
-import distanceTraveled from '../index'
+import distanceTraveled from '../ex1'
 
-describe('split variable', function () {
+describe('split variable ex1', function () {
   test('should get distance', function () {
     const scenario = {
       primaryForce: 10,
