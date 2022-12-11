@@ -1,7 +1,7 @@
 class TelephoneNumber {
-  constructor() {
-    this._areaCode = ''
-    this._number = ''
+  constructor(areaCode, number) {
+    this._areaCode = areaCode
+    this._number = number
   }
 
   get areaCode() {
@@ -42,4 +42,5 @@ class Person {
     this._telephoneNumber.number = arg;
   }
 }
+
 export default Person;
