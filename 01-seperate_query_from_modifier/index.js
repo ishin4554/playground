@@ -4,11 +4,11 @@ const setOffAlarms = () => {
 
 const alertForMiscreant = (people) => {
   for (const p of people) {
-    if(p === "Don") {
+    if (p === "Don") {
       setOffAlarms();
       return "Don";
     }
-    if(p === "John") {
+    if (p === "John") {
       setOffAlarms();
       return "John"
     }
@@ -18,14 +18,17 @@ const alertForMiscreant = (people) => {
 
 const findMiscreant = (people) => {
   for (const p of people) {
-    if(p === "Don") {
+    if (p === "Don") {
       return "Don";
     }
-    if(p === "John") {
+    if (p === "John") {
       return "John"
     }
     return ""
   }
 }
 
-export default alertForMiscreant;
+export {
+  findMiscreant,
+  alertForMiscreant
+};
