@@ -2,8 +2,6 @@ import HeatingPlan from "../index";
 
 let alerts = [];
 const addAlert = (aRoom, aPlan) => {
-  const low = aRoom.daysTempRange.low;
-  const high = aRoom.daysTempRange.high;
   if (!aPlan.xxNEWwithinRange(aRoom.daysTempRange)) alerts.push("room temperature went outside range");
 }
 
