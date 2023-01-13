@@ -2,15 +2,9 @@ import HeatingPlan from "../ex2";
 
 let alerts = [];
 
-const xxNEWwithinRange = (aPlan, tempRange) => {
-  const low = tempRange.low;
-  const high = tempRange.high;
-  const isWithinRange = aPlan.withinRange(low, high)
-  return isWithinRange;
-}
 const addAlert = (aRoom, aPlan) => {
   const tempRange = aRoom.daysTempRange;
-  const isWithinRange = xxNEWwithinRange(aPlan, tempRange);
+  const isWithinRange = aPlan.xxNEWwithinRange(tempRange);
   if (!isWithinRange) alerts.push("room temperature went outside range");
 }
 
