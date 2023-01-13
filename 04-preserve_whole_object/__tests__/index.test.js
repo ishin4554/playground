@@ -2,7 +2,7 @@ import HeatingPlan from "../index";
 
 let alerts = [];
 const addAlert = (aRoom, aPlan) => {
-  if (!aPlan.xxNEWwithinRange(aRoom.daysTempRange)) alerts.push("room temperature went outside range");
+  if (!aPlan.withinRange(aRoom.daysTempRange)) alerts.push("room temperature went outside range");
 }
 
 describe('preserve whole project', function () {
