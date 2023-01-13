@@ -20,4 +20,4 @@ const regularDeliveryDate = (anOrder) => {
 
 }
 
-export default deliveryDate;
+export { deliveryDate, rushDeliveryDate, regularDeliveryDate };

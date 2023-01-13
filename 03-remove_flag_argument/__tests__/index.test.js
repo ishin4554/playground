@@ -1,4 +1,4 @@
-import deliveryDate from "../index";
+import {deliveryDate, rushDeliveryDate} from "../index";
 
 class Order {
   constructor(deliveryState, deliveryDate) {
@@ -18,5 +18,6 @@ describe('remove flag argument', function () {
   test('should be example 1', function () {
     const order = new Order('MA', new Date('2022-01-02'))
     expect(deliveryDate(order, true).toISOString()).toBe(new Date('2022-01-04').toISOString())
+    expect(rushDeliveryDate(order).toISOString()).toBe(new Date('2022-01-04').toISOString())
   });
 });
