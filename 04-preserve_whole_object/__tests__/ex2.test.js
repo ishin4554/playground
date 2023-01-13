@@ -1,8 +1,10 @@
-import HeatingPlan from "../index";
+import HeatingPlan from "../ex2";
 
 let alerts = [];
 const addAlert = (aRoom, aPlan) => {
-  if (!aPlan.withinRange(aRoom.daysTempRange)) alerts.push("room temperature went outside range");
+  const low = aRoom.daysTempRange.low;
+  const high = aRoom.daysTempRange.high;
+  if (!aPlan.withinRange(low, high)) alerts.push("room temperature went outside range");
 }
 
 describe('preserve whole project', function () {
