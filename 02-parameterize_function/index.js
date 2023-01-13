@@ -11,16 +11,4 @@ const withinBand = (usage, bottom, top) => {
   return usage > bottom ? Math.min(usage, top) - bottom : 0
 }
 
-const bottomBand = (usage) => {
-  return Math.min(usage, 100);
-}
-
-const middleBand = (usage) => {
-  return usage > 100 ? Math.min(usage, 200) - 100 : 0;
-}
-
-const topBand = (usage) => {
-  return usage > 200 ? usage - 200 : 0;
-}
-
 export default baseCharge;
