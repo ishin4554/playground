@@ -4,7 +4,7 @@ let alerts = [];
 const addAlert = (aRoom, aPlan) => {
   const low = aRoom.daysTempRange.low;
   const high = aRoom.daysTempRange.high;
-  if (!aPlan.withinRange(low, high)) alerts.push("room temperature went outside range");
+  if (!aPlan.xxNEWwithinRange(aRoom.daysTempRange)) alerts.push("room temperature went outside range");
 }
 
 describe('preserve whole project', function () {
