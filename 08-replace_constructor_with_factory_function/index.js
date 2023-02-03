@@ -12,4 +12,7 @@ class Employee {
 function createEmployee(name, typeCode) {
   return new Employee(name, typeCode)
 }
-export default createEmployee;
+function createEngineer(name) {
+  return new Employee(name, 'E')
+}
+export default createEngineer;

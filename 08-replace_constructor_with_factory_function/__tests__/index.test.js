@@ -1,8 +1,8 @@
-import createEmployee from "../index";
+import createEngineer from "../index";
 
 describe('replace constructor with factory function', function () {
   test('should be Engineer', function () {
-    const candidate = createEmployee('Terry', 'E')
+    const candidate = createEngineer('Terry')
     expect(candidate.type).toBe('Engineer');
   });
 });
