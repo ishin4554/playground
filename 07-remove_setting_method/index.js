@@ -1,7 +1,7 @@
 class Person {
-  constructor() {
+  constructor(id) {
     this._name = '';
-    this._id = '';
+    this.id = id;
   }
   get name() { return this._name; }
   set name(arg) { return this._name = arg; }
